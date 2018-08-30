@@ -7,6 +7,7 @@ class Router
   @@routes = []
 
   def route(path, controller, *methods)
+    # TODO: doesn't get here
     @@routes.push({ path: path, controller: controller, methods: methods })
   end
 
@@ -20,12 +21,13 @@ class Router
     
       if active_route == route.path
         # execute controller for method and method if available 
-        route.get? route.controller.get
+        route.get? route.controller.get # TODO: doesn't work
       end
     end
   end
 end
 
+# TODO: should be in different file since its the server
 class Handler < Router
   def call(env)
     # gets the request and sends response
