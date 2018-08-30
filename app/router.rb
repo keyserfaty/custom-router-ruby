@@ -20,7 +20,7 @@ class Router
     
       if active_route == route.path
         # execute controller for method and method if available 
-        route.get? route.controller
+        route.get? route.controller.get
       end
     end
   end
